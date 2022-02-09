@@ -27,3 +27,13 @@ This script does the following:
 ## Excecution time
 
 About 1-2h depending on hardware 
+
+## Use cases
+
+* A compromise assessment looking for anything that could be suspicious against given host/memory/binaries
+* An IR case where memory dump is given but you are not sure if something is hiding in the processes and want to check for as many potential matches as possible
+* A general scan of the disk/processes when looking for potential 'badness' (especially useful for ICS IR)
+
+## False Positive
+
+As a result of this script, you will end up with one rather large YARA rule file that can be used for scanning multiple environments. Some of the rules will make no sense in the context of what you are investing so other verification methods might be needed to ensure that false positives are eliminated and/or reduced.
