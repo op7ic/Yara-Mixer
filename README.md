@@ -24,6 +24,6 @@ This script does the following:
 * Windows Server 2019 x64
 * Windows 10 x64
 
-## OpSec
+## Excecution time
 
-None 
+About 1-2h depending on hardware 
