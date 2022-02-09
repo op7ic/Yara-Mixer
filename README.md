@@ -31,7 +31,7 @@ About 1-2h depending on hardware
 ## Use cases
 
 * A compromise assessment looking for anything that could be suspicious against given host/memory/binaries
-* An IR case where memory dump is given but you are not sure if something is hiding in the processes and want to check for as many potential matches as possible
+* An IR case where memory dump is given but you are not sure if something is hiding in the processes and want to check for as many potential matches as possible against process dumps, VAD or other interesting artefacts. 
 * A general scan of the disk/processes when looking for potential 'badness' (especially useful for ICS IR)
 
 ## False Positive
