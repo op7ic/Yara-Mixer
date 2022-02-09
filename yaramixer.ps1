@@ -227,12 +227,17 @@ if ($containsWord -contains $true) {
 # Cleanup and output
 ##########################################################
 
+##########################################################
+# Cleanup and output
+##########################################################
+
 Write-Host "[+] Removing leftover files"
 Remove-Item –path "$yaraDownloadLocation" –recurse -Force
 Remove-Item –path "$compiler_error_string" -Force
 Remove-Item –path "$compiler_output_string" -Force
 Remove-Item –path "$test_file_for_rule_out" -Force
 Remove-Item –path "$temp_file_for_compile" -Force
+Remove-Item –path "$tempFileYarLocation" -Force
 
 Write-Host "Clean YARA rule is located in $nondup_file"
 
