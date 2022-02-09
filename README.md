@@ -17,7 +17,7 @@ This script does the following:
   * Remove rules which error out and leave only 'working' rules in new ruleset file
   * Write all working rules to new ruleset file
 * Remove any left over files
-* Print out location of the new ruleset file
+* Print out location of final ruleset file
 
 ## Tested On
 
