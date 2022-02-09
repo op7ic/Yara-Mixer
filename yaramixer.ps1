@@ -17,6 +17,16 @@ https://github.com/malpedia/signator-rules/archive/refs/heads/main.zip
 https://github.com/prolsen/yara-rules/archive/refs/heads/master.zip
 https://github.com/volexity/threat-intel/archive/refs/heads/main.zip
 https://github.com/telekom-security/malware_analysis/archive/refs/heads/main.zip
+https://github.com/Xumeiquer/yara-forensics/archive/refs/heads/master.zip
+https://github.com/advanced-threat-research/Yara-Rules/archive/refs/heads/master.zip
+https://github.com/Hestat/lw-yara/archive/refs/heads/master.zip
+https://github.com/jeFF0Falltrades/YARA-Signatures/archive/refs/heads/master.zip
+https://github.com/SupportIntelligence/Icewater/archive/refs/heads/master.zip
+https://github.com/fboldewin/YARA-rules/archive/refs/heads/master.zip
+https://github.com/tenable/yara-rules/archive/refs/heads/master.zip
+https://github.com/fr0gger/Yara-Unprotect/archive/refs/heads/master.zip
+https://github.com/JPCERTCC/jpcert-yara/archive/refs/heads/main.zip
+https://github.com/thewhiteninja/yarasploit/archive/refs/heads/master.zip
 "@ -split "`n" | % { $_.trim() }
 
 $individual_yara = @"
@@ -24,6 +34,7 @@ https://gist.githubusercontent.com/pedramamini/c586a151a978f971b70412ca4485c491/
 https://raw.githubusercontent.com/mandiant/red_team_tool_countermeasures/master/all-yara.yar
 https://gist.githubusercontent.com/Neo23x0/f1bb645a4f715cb499150c5a14d82b44/raw/d621fcfd496d03dca78f9ff390cad88684139d64/iddqd.yar
 https://raw.githubusercontent.com/VectraThreatLab/reyara/master/re.yar
+https://raw.githubusercontent.com/Te-k/cobaltstrike/master/rules.yar
 "@ -split "`n" | % { $_.trim() }
 
 $project_repos = @"
@@ -34,6 +45,8 @@ https://github.com/deadbits/yara-rules/archive/refs/heads/master.zip
 https://github.com/Neo23x0/signature-base/archive/refs/heads/master.zip
 https://github.com/intezer/yara-rules/archive/refs/heads/master.zip
 https://github.com/t4d/PhishingKit-Yara-Rules/archive/refs/heads/master.zip
+https://github.com/malice-plugins/yara/archive/refs/heads/master.zip
+https://github.com/nccgroup/Cyber-Defence/archive/refs/heads/master.zip
 "@ -split "`n" | % { $_.trim() }
 
 ##########################################################
