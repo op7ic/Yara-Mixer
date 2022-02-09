@@ -193,12 +193,12 @@ $header_yara_rule | out-file -Encoding ascii $nondup_file
 
 # Create test file for yara matches as yara does not have capability to verify content of rule file without trying to match something
 $temp_file_for_compile = (Join-Path $temp_location yararule_compiled.yar) 
+$test_file_for_rule_out = (Join-Path $temp_location yararule_testfile.txt) 
 "123" | out-file $test_file_for_rule_out
 
 # For each identified YARA rule we need to test and insert only rules that actually work.
 $Rules.GetEnumerator() | ForEach-Object { 
     
-$test_file_for_rule_out = (Join-Path $temp_location yararule_testfile.txt) 
 $yaracbin = "$yaraDownloadLocation\yara64.exe"	
 
 # We use this for testing rule. Import most common modules and stick rule content in based on regex
