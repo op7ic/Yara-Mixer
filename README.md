@@ -13,6 +13,7 @@ This script does the following:
 * For each YARA rule in a temporary 'master' file: 
   * Use regex to extract the content of the rule 
   * Remove YARA rule duplicates
+  * Strip non-ASCII characters
   * Run a simple test to see if rule works without any additional imports or custom modules
   * Remove rules which error out and leave only 'working' rules in new ruleset file
   * Write all working rules to new ruleset file
@@ -26,13 +27,13 @@ This script does the following:
 
 ## Excecution time
 
-About 1-2h depending on hardware 
+Couple of hours depending on hardware and number of sources.
 
 ## Use cases
 
-* A compromise assessment looking for anything that could be suspicious against given host/memory/binaries
+* A compromise assessment looking for anything that could be suspicious against given host, memory or binaries.
 * An IR case where memory dump is given but you are not sure if something is hiding in the processes and want to check for as many potential matches as possible against process dumps, VAD or other interesting artefacts. 
-* A general scan of the disk/processes when looking for potential 'badness' (especially useful for ICS IR)
+* A general scan of the disk/processes when looking for potential 'badness' (especially useful for ICS IR).
 
 ## False Positive
 
