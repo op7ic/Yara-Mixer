@@ -2,11 +2,11 @@
 
 This repository contains a simple PowerShell script concatenating different Yara rules into one master rule file for ease of use and portability.
 
-## Script Activities:
+## Script Activities
 
 This script does the following:
 
-* Downloads various YARA rule repositories into temp folder
+* Downloads various YARA rule repositories, individual yara rules and projects which contain custom rules into temp folder
 * Downloads YARA binary into temp folder
 * Unpacks various YARA rule repositories into random UUID-named subfolders
 * Searches all the repositories for files with extension *.yar, *.rule or *.yara and concatenate them into temporary 'master' file
@@ -27,7 +27,7 @@ This script does the following:
 
 ## Excecution time
 
-Couple of hours depending on hardware and number of sources.
+Couple of hours depending on hardware and number of sources. Modify [yaramixer](yaramixer.ps1) to add or remove new yara rule sources.
 
 ## Use case
 
