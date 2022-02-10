@@ -241,8 +241,8 @@ $containsWord = $error_file | %{$_ -match "error"}
 if ($containsWord -contains $true) {
     Write-Host  "rule $($_.Key) errors out. Skipping"
 } else {
-	# We add a random mixer tag to eliminate other mismatches for family tags as after de-duplication yara still complains on families tags sometimes. Ideally we will move this to be based on regex.
-	$mixerTag = -join ((65..90) + (97..122) | Get-Random -Count 5 | % {[char]$_})
+	# We add a random mixer tag to eliminate other mismatches for family tags as after de-duplication yara still complains that rules are duplicated sometimes. Ideally we will move this detection to be based on regex.
+	$mixerTag = -join ((65..90) + (97..122) | Get-Random -Count 6 | % {[char]$_})
     "rule $mixerTag`_$($_.Key) {`n $($_.Value) `n}`n"  | out-file -Append -Encoding ascii $nondup_file
 }
 }
