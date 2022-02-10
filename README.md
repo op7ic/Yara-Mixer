@@ -29,11 +29,65 @@ This script does the following:
 
 Couple of hours depending on hardware and number of sources.
 
-## Use cases
+## Use case
 
 * A compromise assessment looking for anything that could be suspicious against given host, memory or binaries.
 * An IR case where memory dump is given but you are not sure if something is hiding in the processes and want to check for as many potential matches as possible against process dumps, VAD or other interesting artefacts. 
 * A general scan of the disk/processes when looking for potential 'badness' (especially useful for ICS IR).
+
+## Adding or Removing YARA Sources
+
+Edit the script to add/remove sources. The following variables are used to store the list of repositories downloaded and parsed by [yaramixer](yaramixer.ps1) script:
+
+```
+$yararepo_urls = @"
+https://github.com/CyberDefenses/CDI_yara/archive/refs/heads/master.zip
+https://github.com/citizenlab/malware-signatures/archive/refs/heads/master.zip
+https://github.com/f0wl/yara_rules/archive/refs/heads/main.zip
+https://github.com/fboldewin/YARA-rules/archive/refs/heads/master.zip
+https://github.com/godaddy/yara-rules/archive/refs/heads/master.zip
+https://github.com/InQuest/yara-rules/archive/refs/heads/master.zip
+https://github.com/mikesxrs/Open-Source-YARA-rules/archive/refs/heads/master.zip
+https://github.com/prolsen/yara-rules/archive/refs/heads/master.zip
+https://github.com/reversinglabs/reversinglabs-yara-rules/archive/refs/heads/develop.zip
+https://github.com/Yara-Rules/rules/archive/refs/heads/master.zip
+https://github.com/kevthehermit/YaraRules/archive/refs/heads/master.zip
+https://github.com/malpedia/signator-rules/archive/refs/heads/main.zip
+https://github.com/prolsen/yara-rules/archive/refs/heads/master.zip
+https://github.com/volexity/threat-intel/archive/refs/heads/main.zip
+https://github.com/telekom-security/malware_analysis/archive/refs/heads/main.zip
+https://github.com/Xumeiquer/yara-forensics/archive/refs/heads/master.zip
+https://github.com/advanced-threat-research/Yara-Rules/archive/refs/heads/master.zip
+https://github.com/Hestat/lw-yara/archive/refs/heads/master.zip
+https://github.com/jeFF0Falltrades/YARA-Signatures/archive/refs/heads/master.zip
+https://github.com/SupportIntelligence/Icewater/archive/refs/heads/master.zip
+https://github.com/fboldewin/YARA-rules/archive/refs/heads/master.zip
+https://github.com/tenable/yara-rules/archive/refs/heads/master.zip
+https://github.com/fr0gger/Yara-Unprotect/archive/refs/heads/master.zip
+https://github.com/JPCERTCC/jpcert-yara/archive/refs/heads/main.zip
+https://github.com/thewhiteninja/yarasploit/archive/refs/heads/master.zip
+"@ -split "`n" | % { $_.trim() }
+
+$individual_yara = @"
+https://gist.githubusercontent.com/pedramamini/c586a151a978f971b70412ca4485c491/raw/68ba7792699177c033c673c7ffccfa7a0ed5ce47/XProtect.yara
+https://raw.githubusercontent.com/mandiant/red_team_tool_countermeasures/master/all-yara.yar
+https://gist.githubusercontent.com/Neo23x0/f1bb645a4f715cb499150c5a14d82b44/raw/d621fcfd496d03dca78f9ff390cad88684139d64/iddqd.yar
+https://raw.githubusercontent.com/VectraThreatLab/reyara/master/re.yar
+https://raw.githubusercontent.com/Te-k/cobaltstrike/master/rules.yar
+"@ -split "`n" | % { $_.trim() }
+
+$project_repos = @"
+https://github.com/bwall/bamfdetect/archive/refs/heads/master.zip
+https://github.com/airbnb/binaryalert/archive/refs/heads/master.zip
+https://github.com/kevoreilly/CAPEv2/archive/refs/heads/master.zip
+https://github.com/deadbits/yara-rules/archive/refs/heads/master.zip
+https://github.com/Neo23x0/signature-base/archive/refs/heads/master.zip
+https://github.com/intezer/yara-rules/archive/refs/heads/master.zip
+https://github.com/t4d/PhishingKit-Yara-Rules/archive/refs/heads/master.zip
+https://github.com/malice-plugins/yara/archive/refs/heads/master.zip
+https://github.com/nccgroup/Cyber-Defence/archive/refs/heads/master.zip
+"@ -split "`n" | % { $_.trim() }
+```
 
 ## False Positive
 
