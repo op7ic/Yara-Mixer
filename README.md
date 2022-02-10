@@ -40,6 +40,7 @@ Couple of hours depending on hardware and number of sources. Modify [yaramixer](
 * An IR case where memory dump is given but you are not sure if something is hiding in the processes and want to check for as many potential matches as possible against process dumps, VAD or other interesting artefacts. 
 * A general scan of the disk/processes when looking for potential 'badness' (especially useful for ICS IR).
 * Checking if latest red team process injection can be detected using YARA or matched with known rule sets.
+* Verify that red team TTPs can't be easily found using public signatures.
 
 ## Adding or Removing YARA Sources
 
