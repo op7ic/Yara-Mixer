@@ -209,7 +209,8 @@ $test_file_for_rule_out = (Join-Path $temp_location yararule_testfile.txt)
 $Rules.GetEnumerator() | ForEach-Object { 
     
 $yaracbin = "$yaraDownloadLocation\yara64.exe"	
-
+# We add a random mixer tag to eliminate other mismatches for family tags as after de-duplication yara still complains that rules are duplicated sometimes. Ideally we will move this detection to be based on regex.
+$mixerTag = -join ((65..90) + (97..122) | Get-Random -Count 6 | % {[char]$_})
 # We use this for testing rule. Import most common modules and stick rule content in based on regex
 $string = @" 
 import "pe"
@@ -217,7 +218,7 @@ import "math"
 import "elf" 
 import "hash"
 `n
-rule $($_.Key) {`n $($_.Value) `n}
+rule $mixerTag`_$($_.Key) {`n $($_.Value) `n}
 "@
 # Insert temp rule into testing file and carry on with analysis
 $string | out-file -Encoding ascii $temp_file_for_compile
