@@ -4,7 +4,7 @@
   <img src="https://github.com/op7ic/Yara-Mixer/blob/main/pic/mixer.PNG?raw=true" alt="Yara Mixer"/>
 </p>
 
-This repository contains a simple PowerShell script concatenating different Yara rules into one master rule file for ease of use and portability.
+This repository contains a PowerShell script concatenating different Yara rules into one master rule file for ease of use and portability.
 
 ## Script Activities
 
