@@ -158,7 +158,7 @@ Remove-Item –path "$temp_location\yaratemp_*" –recurse -Force
 
 # Rule cleanup based on: https://stackoverflow.com/questions/26849944/remove-duplicate-yara-rules-with-powershell-regular-expressions
 # This is not perfect as it won't recognize family tags. These will be skipped
-$tempFileYarLocation = (Join-Path $temp_location "one-rule-for-all.yar")
+
 # Read entire file, with all existing rules we found from various repo and replace text that might cause errors in parsing.
 # In addition get rid of comments from various locations
 $File = [io.file]::ReadAllText($tempFileYarLocation).Replace(": PEiD","").Replace("Yara Rule Set","").Replace("Rule Set","").Replace("private rule","rule").Replace("Generic Rules","").Replace("Additional Rules","")
