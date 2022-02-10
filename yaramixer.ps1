@@ -35,6 +35,10 @@ https://github.com/tenable/yara-rules/archive/refs/heads/master.zip
 https://github.com/fr0gger/Yara-Unprotect/archive/refs/heads/master.zip
 https://github.com/JPCERTCC/jpcert-yara/archive/refs/heads/main.zip
 https://github.com/thewhiteninja/yarasploit/archive/refs/heads/master.zip
+https://github.com/bartblaze/Yara-rules/archive/refs/heads/master.zip
+https://github.com/deadbits/yara-rules/archive/refs/heads/master.zip
+https://github.com/ProIntegritate/Yara-rules/archive/refs/heads/master.zip
+https://github.com/nshadov/yara-rules/archive/refs/heads/master.zip
 "@ -split "`n" | % { $_.trim() }
 
 $individual_yara = @"
