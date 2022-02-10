@@ -14,6 +14,7 @@ This script does the following:
   * Use regex to extract the content of the rule 
   * Remove YARA rule duplicates
   * Strip non-ASCII characters
+  * Strip rule comments (i.e. ```/* Rule set */```)
   * Run a simple test to see if rule works without any additional imports or custom modules
   * Remove rules which error out and leave only 'working' rules in new ruleset file
   * Write all working rules to new ruleset file
@@ -95,4 +96,4 @@ As a result of this script, you will end up with one rather large YARA rule file
 
 ## Limitations
 
-* Rules with 'Family' tags in the name are skipped right now. 
+Rules with 'Family' tags in the name are skipped right now. 
