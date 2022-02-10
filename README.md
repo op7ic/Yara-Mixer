@@ -10,20 +10,20 @@ This repository contains a PowerShell script concatenating different Yara rules 
 
 This script does the following:
 
-* Downloads various YARA rule repositories, individual yara rules and projects which contain custom rules into temp folder
-* Downloads YARA binary into temp folder
-* Unpacks various YARA rule repositories into random UUID-named subfolders
-* Searches all the repositories for files with extension *.yar, *.rule or *.yara and concatenate them into temporary 'master' file
+* Downloads various YARA rule repositories, individual yara rules and projects which contain custom rules into temp folder.
+* Downloads YARA binary into temp folder.
+* Unpacks various YARA rule repositories into temp, random UUID-named, subfolders.
+* Searches all the repositories for files with extension *.yar, *.rule or *.yara and concatenate them into temporary 'master' file.
 * For each YARA rule in a temporary 'master' file: 
-  * Use regex to extract the content of the rule 
-  * Remove YARA rule duplicates
-  * Strip non-ASCII characters
-  * Strip rule comments (i.e. ```/* Rule set */```)
-  * Run a simple test to see if rule works without any additional imports or custom modules
-  * Remove rules which error out and leave only 'working' rules in new ruleset file
-  * Write all working rules to new ruleset file
-* Remove any left over files
-* Print out location of final ruleset file
+  * Use regex to extract the content of the rule. 
+  * Remove YARA rule duplicates.
+  * Strip non-ASCII characters.
+  * Strip rule comments (i.e. ```/* Rule set */```).
+  * Run a simple test to see if rule works without any additional imports or custom modules.
+  * Remove rules which error out and leave only 'working' rules in new ruleset file.
+  * Write all working rules to new ruleset file.
+* Remove any left over files.
+* Print out location of final ruleset file.
 
 ## Tested On
 
