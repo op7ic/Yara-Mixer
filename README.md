@@ -96,6 +96,14 @@ https://github.com/nccgroup/Cyber-Defence/archive/refs/heads/master.zip
 "@ -split "`n" | % { $_.trim() }
 ```
 
+## How to use resulting file
+
+Simply use the rules to scan folder, process or any other location using yara command as seen below.
+
+```
+yara64.exe -w -m yararule_nonduplicatedrules.yar C:\Windows\ 
+```
+
 ## False Positive
 
 As a result of this script, you will end up with one rather large YARA rule file that can be used for scanning multiple environments. Some of the rules will make no sense in the context of what you are investing so other verification methods might be needed to ensure that false positives are eliminated and/or reduced.
