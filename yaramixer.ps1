@@ -235,12 +235,15 @@ $yaracompile_process.WaitForExit()
 ##########################################################
 # Get content of error log and check for 'error' string inside
 $error_file = Get-Content $compiler_error_string
+
 $containsWord = $error_file | %{$_ -match "error"}
 # If 'error' string in error log, skip the rule, otherwise insert into global file
 if ($containsWord -contains $true) {
     Write-Host  "rule $($_.Key) errors out. Skipping"
 } else {
-    "rule $($_.Key) {`n $($_.Value) `n}`n"  | out-file -Append -Encoding ascii $nondup_file
+	# We add a random mixer tag to eliminate other mismatches for family tags as after de-duplication yara still complains on families tags sometimes. Ideally we will move this to be based on regex.
+	$mixerTag = -join ((65..90) + (97..122) | Get-Random -Count 5 | % {[char]$_})
+    "rule $mixerTag`_$($_.Key) {`n $($_.Value) `n}`n"  | out-file -Append -Encoding ascii $nondup_file
 }
 }
 
@@ -257,34 +260,3 @@ Remove-Item –path "$temp_file_for_compile" -Force
 Remove-Item –path "$tempFileYarLocation" -Force
 
 Write-Host "Clean YARA rule is located in $nondup_file"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
