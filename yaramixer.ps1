@@ -141,6 +141,7 @@ $tempFileYarLocation = (Join-Path $temp_location "one-rule-for-all.yar")
 $fileextension = "*.yara","*.yar","*.rule"
 # Grab all files with specified extension and merge them
 $content_all = (Get-ChildItem "$temp_location\yaratemp_*" -Include ($fileextension) -recurse | Get-Content)
+# Clean up non-ASCII characters we find in some of the rules and make sure whatever we write back contains only ASCII
 $content_all -replace '[^ -~\t]','' | out-file $tempFileYarLocation -encoding ASCII
 # After merging is done, remove all leftover folders and leave just single yara RULE file
 Remove-Item –path "$temp_location\yaratemp_*" –recurse -Force
@@ -150,8 +151,8 @@ Remove-Item –path "$temp_location\yaratemp_*" –recurse -Force
 $tempFileYarLocation = (Join-Path $temp_location "one-rule-for-all.yar")
 # Read entire file, with all existing rules we found from various repo and replace text that might cause errors in parsing.
 # In addition get rid of comments from various locations
-$File = [io.file]::ReadAllText($tempFileYarLocation).Replace(": PEiD","").Replace("Yara Rule Set","").Replace("Rule Set","").Replace("private rule","rule").Replace("Generic Rules","")
-# Regex pattern to replace comments in the file
+$File = [io.file]::ReadAllText($tempFileYarLocation).Replace(": PEiD","").Replace("Yara Rule Set","").Replace("Rule Set","").Replace("private rule","rule").Replace("Generic Rules","").Replace("Additional Rules","")
+# Regex pattern to replace comments in the file with an empty space
 $file_post_process = $File -replace "(?ms)/\*(?:.|[\r\n])*?\*/", ""
 # Regex pattern to find YARA rules
 $Pattern = "(?smi)rule(.*?)\{(.*?condition:.*?)\}"
