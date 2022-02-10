@@ -1,4 +1,12 @@
 ##########################################################
+# Author      : Yuri Kramarz                             #
+# Version     : 1.0                                      #
+# Type        : PowerShell                               #
+# Description : Yara-Mixer. See README.md for details    # 
+##########################################################
+
+
+##########################################################
 # List of various YARA rule repos we are going to pull out
 ##########################################################
 $yararepo_urls = @"
