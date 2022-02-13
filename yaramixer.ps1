@@ -39,6 +39,7 @@ https://github.com/bartblaze/Yara-rules/archive/refs/heads/master.zip
 https://github.com/deadbits/yara-rules/archive/refs/heads/master.zip
 https://github.com/ProIntegritate/Yara-rules/archive/refs/heads/master.zip
 https://github.com/nshadov/yara-rules/archive/refs/heads/master.zip
+https://github.com/sbousseaden/YaraHunts/archive/refs/heads/master.zip
 "@ -split "`n" | % { $_.trim() }
 
 $individual_yara = @"
