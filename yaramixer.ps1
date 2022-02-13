@@ -1,5 +1,5 @@
 ##########################################################
-# Author      : Yuri Kramarz                             #
+# Author      : Jerzy 'Yuri' Kramarz (op7ic)             #
 # Version     : 1.0                                      #
 # Type        : PowerShell                               #
 # Description : Yara-Mixer. See README.md for details    # 
