@@ -40,6 +40,7 @@ https://github.com/deadbits/yara-rules/archive/refs/heads/master.zip
 https://github.com/ProIntegritate/Yara-rules/archive/refs/heads/master.zip
 https://github.com/nshadov/yara-rules/archive/refs/heads/master.zip
 https://github.com/sbousseaden/YaraHunts/archive/refs/heads/master.zip
+https://github.com/stairwell-inc/threat-research/archive/refs/heads/main.zip
 "@ -split "`n" | % { $_.trim() }
 
 $individual_yara = @"
@@ -50,6 +51,7 @@ https://raw.githubusercontent.com/VectraThreatLab/reyara/master/re.yar
 https://raw.githubusercontent.com/Te-k/cobaltstrike/master/rules.yar
 https://gist.githubusercontent.com/itsreallynick/a5c10f5c4c19f153117c423ea57dc8d0/raw/ceece1c51abb866f190a01a833e3cd3507d70f86/gen_URLpersistence.yar
 https://gist.githubusercontent.com/itsreallynick/79841d4e9a50e0e0d086801441e88983/raw/0d36a7a966588dc0b6e6eb57d21df3af74296210/installutilpayload.yar
+https://raw.githubusercontent.com/stvemillertime/ConventionEngine/master/ConventionEngine.yar
 "@ -split "`n" | % { $_.trim() }
 
 $project_repos = @"
