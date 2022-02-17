@@ -73,6 +73,12 @@ https://github.com/tenable/yara-rules/archive/refs/heads/master.zip
 https://github.com/fr0gger/Yara-Unprotect/archive/refs/heads/master.zip
 https://github.com/JPCERTCC/jpcert-yara/archive/refs/heads/main.zip
 https://github.com/thewhiteninja/yarasploit/archive/refs/heads/master.zip
+https://github.com/bartblaze/Yara-rules/archive/refs/heads/master.zip
+https://github.com/deadbits/yara-rules/archive/refs/heads/master.zip
+https://github.com/ProIntegritate/Yara-rules/archive/refs/heads/master.zip
+https://github.com/nshadov/yara-rules/archive/refs/heads/master.zip
+https://github.com/sbousseaden/YaraHunts/archive/refs/heads/master.zip
+https://github.com/stairwell-inc/threat-research/archive/refs/heads/main.zip
 "@ -split "`n" | % { $_.trim() }
 
 $individual_yara = @"
@@ -81,6 +87,9 @@ https://raw.githubusercontent.com/mandiant/red_team_tool_countermeasures/master/
 https://gist.githubusercontent.com/Neo23x0/f1bb645a4f715cb499150c5a14d82b44/raw/d621fcfd496d03dca78f9ff390cad88684139d64/iddqd.yar
 https://raw.githubusercontent.com/VectraThreatLab/reyara/master/re.yar
 https://raw.githubusercontent.com/Te-k/cobaltstrike/master/rules.yar
+https://gist.githubusercontent.com/itsreallynick/a5c10f5c4c19f153117c423ea57dc8d0/raw/ceece1c51abb866f190a01a833e3cd3507d70f86/gen_URLpersistence.yar
+https://gist.githubusercontent.com/itsreallynick/79841d4e9a50e0e0d086801441e88983/raw/0d36a7a966588dc0b6e6eb57d21df3af74296210/installutilpayload.yar
+https://raw.githubusercontent.com/stvemillertime/ConventionEngine/master/ConventionEngine.yar
 "@ -split "`n" | % { $_.trim() }
 
 $project_repos = @"
